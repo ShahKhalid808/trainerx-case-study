@@ -7,7 +7,7 @@ TrainerX is a fitness management platform built for the Taiwan market, designed 
 ### 🛠️ The Tech Stack
 
 | Component | Technology |
-| :--- | :--- |
+| :---: | :---: |
 | **Trainer App** | <img src="https://skillicons.dev/icons?i=react,ts" width="35" /> **React Native (Expo)** |
 | **Student Web/LINE** | <img src="https://skillicons.dev/icons?i=nextjs" width="35" /> **Next.js** |
 | **Database** | <img src="https://skillicons.dev/icons?i=postgresql" width="35" /> **PostgreSQL** |
