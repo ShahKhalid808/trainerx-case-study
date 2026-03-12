@@ -7,12 +7,12 @@ TrainerX is a fitness management platform built for the Taiwan market, designed 
 ### 🛠️ The Tech Stack
 
 | Component | Technology |
-| :--- | :--- |
-| **Trainer App** | <img src="https://skillicons.dev/icons?i=react,ts" width="35" /> **React Native (Expo)** |
-| **Student Web/LINE** | <img src="https://skillicons.dev/icons?i=nextjs" width="35" /> **Next.js** |
-| **Database** | <img src="https://skillicons.dev/icons?i=postgresql" width="35" /> **PostgreSQL** |
-| **Backend/Auth** | <img src="https://skillicons.dev/icons?i=supabase" width="35" /> **Supabase (Auth/API Layer)** |
-| **Analytics** | <img src="https://skillicons.dev/icons?i=googleanalytics" width="35" /> **Google Analytics** |
+| :---: | :---: |
+| **Trainer App** | <img src="https://skillicons.dev/icons?i=react,ts" width="30" align="middle" /> **React Native (Expo)** |
+| **Student Web/LINE** | <img src="https://skillicons.dev/icons?i=nextjs" width="30" align="middle" /> **Next.js** |
+| **Database** | <img src="https://skillicons.dev/icons?i=postgresql" width="30" align="middle" /> **PostgreSQL** |
+| **Backend/Auth** | <img src="https://skillicons.dev/icons?i=supabase" width="30" align="middle" /> **Supabase (Auth/API Layer)** |
+| **Analytics** | <img src="https://skillicons.dev/icons?i=googleanalytics" width="30" align="middle" /> **Google Analytics** |
 
 ---
 
@@ -33,7 +33,7 @@ To ensure the platform felt native for the Taiwan market:
 * **Dynamic Content:** If the device/browser language is set to **Traditional Chinese**, the UI automatically applies the Chinese locale; otherwise, it gracefully defaults to **English**.
 
 ### 4. Ecosystem Integration (LINE API)
-* **The Bridge:** I engineered a deep-linking bridge using the **LINE Messaging API**. 
+* **The Bridge:** I engineered a deep-linking bridge using the **LINE Messaging API**. 
 * **User Flow:** When a student books a session, they receive an automated LINE notification. Clicking this link opens the Next.js web interface inside the LINE browser, where they can confirm their booking instantly.
 
 ---
@@ -56,4 +56,3 @@ To ensure the platform felt native for the Taiwan market:
 I am passionate about building robust, multi-platform ecosystems. If you'd like to discuss the integration between React Native and Next.js, or how I handle complex PostgreSQL schemas to maintain data integrity, let's connect.
 
 [LinkedIn](https://linkedin.com/in/shah-khalid-react-native) • [GitHub Profile](https://github.com/ShahKhalid808)
-
