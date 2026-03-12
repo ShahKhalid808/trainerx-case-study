@@ -1,6 +1,6 @@
-# 🏋️ TrainerX: Mobile Fitness Ecosystem (Taiwan MVP)
+# 🏋️ TrainerX: Fitness Management Ecosystem (Taiwan MVP)
 
-TrainerX is a fitness management platform built for the Taiwan market, designed to bridge the gap between personal trainers and their students. I led the mobile architecture, task pipeline management, and delivery of the production-ready MVP.
+TrainerX is a fitness management platform built for the Taiwan market, designed to bridge the gap between personal trainers and their students. I led the end-to-end architecture, delivering both a **React Native mobile app for Trainers** and a **Next.js web interface for Students** (integrated directly into LINE via WebView).
 
 ---
 
@@ -8,52 +8,50 @@ TrainerX is a fitness management platform built for the Taiwan market, designed 
 
 | Component | Technology |
 | :--- | :--- |
-| **Frontend** | <img src="https://skillicons.dev/icons?i=react,ts" width="35" /> **React Native (Expo)** |
-| **Backend/Web** | <img src="https://skillicons.dev/icons?i=nextjs,supabase" width="35" /> **Next.js & Supabase** |
+| **Trainer App** | <img src="https://skillicons.dev/icons?i=react,ts" width="35" /> **React Native (Expo)** |
+| **Student Web/LINE** | <img src="https://skillicons.dev/icons?i=nextjs,supabase" width="35" /> **Next.js & Supabase** |
+| **Backend/Auth** | <img src="https://skillicons.dev/icons?i=supabase" width="35" /> **Supabase (Auth & Database)** |
 | **Analytics** | <img src="https://skillicons.dev/icons?i=googleanalytics" width="35" /> **Google Analytics** |
-| **Tools** | <img src="https://skillicons.dev/icons?i=git,github,notion" width="35" /> **Notion / Git** |
 
 ---
 
 ## 🏗️ Engineering Deep-Dive
 
-### 1. High-Reliability Calendar Sync Engine
+### 1. Unified Fitness Ecosystem
+* **Trainer Side (Mobile):** I architected a React Native application that allows trainers to manage schedules, bookings, and student data on the go.
+* **Student Side (LINE/Web):** To maximize accessibility in the Taiwan market, I built a Next.js web application optimized for the **LINE WebView**. This allows students to book sessions directly from their chat window, without ever needing to download an app.
+
+### 2. High-Reliability Calendar Sync Engine
 I engineered a multi-layered synchronization system to manage trainer schedules with 100% data integrity.
+* **Conflict Prevention:** The system fetches all Google Calendar events within a **6-month window**. Before a trainer creates a new class, the system cross-references the request against these events.
+* **Sync Strategy:** I implemented Google "Automatic Events" (Webhooks) for real-time updates. To handle potential webhook failures, I built a **nightly Cron Job** that reconciles the Supabase database with Google, ensuring the trainer's availability is always accurate for the students' booking interface.
 
-* **Conflict Prevention:** The system fetches all Google Calendar events within a **6-month window**. Before a trainer creates a new class, the app cross-references the request against these existing events. If a conflict is detected, the system blocks the creation and alerts the trainer to the specific overlapping event.
-* **Dual-Layer Sync:**
-    * **Real-time:** Implemented Google "Automatic Events" to trigger an immediate sync the moment a trainer creates a calendar entry.
-    * **The Fallback (Cron Jobs):** To handle potential webhook failures, I built a secondary **Cron Job** architecture that runs nightly to reconcile missed events, ensuring the local database stays in perfect harmony with Google.
+### 3. Intelligent Localization (i18n)
+To ensure the platform felt native for the Taiwan market:
+* **Auto-detection:** Both the Mobile and Web apps perform a runtime check of the system language.
+* **Dynamic Content:** If the device/browser language is set to **Traditional Chinese**, the UI automatically applies the Chinese locale; otherwise, it gracefully defaults to **English**.
 
-### 2. Intelligent Localization (i18n)
-To ensure a native experience for the Taiwan market, I implemented an auto-detecting localization engine.
-* **Logic:** Upon app launch, the system performs a runtime check of the device's system language.
-* **Behavior:** If the device is set to **Traditional Chinese**, the app automatically applies the Chinese locale. Otherwise, it gracefully defaults to **English**.
-* **Scalability:** By decoupling language strings from the UI components, I ensured the codebase remains clean and easy to maintain as the product expands.
-
-### 3. Ecosystem Integration (LINE API)
-* **Challenge:** Seamlessly transitioning users from chat notifications into the app.
-* **Solution:** I engineered a deep-linking bridge using the **LINE Messaging API**. Students receive class reminders in LINE and are directed straight to the specific "Course Detail" screen in the app, significantly improving user engagement.
-
-### 4. AI-Accelerated Workflow
-To meet the aggressive MVP deadline, I leveraged **Cursor and Claude AI** to rapidly prototype the supporting Next.js web dashboard while I architected the core React Native logic. This AI-assisted workflow reduced the development cycle by approximately 40% while maintaining modular, maintainable code.
+### 4. Ecosystem Integration (LINE API)
+* **The Bridge:** I engineered a deep-linking bridge using the **LINE Messaging API**. 
+* **User Flow:** When a student books a session, they receive an automated LINE notification. Clicking this link opens the Next.js web interface inside the LINE browser, where they can confirm their booking instantly.
 
 ---
 
 ## 📐 Best Practices & Ownership
-* **State Management:** Implemented **Redux** for centralized, predictable state management across the scheduling and user-profile modules.
-* **Documentation:** I maintain a living library of reusable UI components in **Notion**, ensuring the client’s team can maintain the project with zero friction.
-* **Ownership:** I managed the full project lifecycle, translating high-level business requirements into technical specs and store-ready deployments.
+* **Data Flow:** Used **Redux** (Mobile) and **Supabase hooks** (Web) to ensure real-time data consistency between the trainer's dashboard and the student's booking view.
+* **Documentation:** I maintained a living library of reusable UI components in **Notion**, ensuring the client’s team could handle future maintenance with zero friction.
+* **AI-Accelerated Workflow:** I utilized **Cursor and Claude AI** to rapidly prototype the Next.js web interface while I architected the core mobile logic, reducing delivery time by 40%.
 
 ---
 
 ## 🚀 Impact & Results
-* **Data Integrity:** The dual-layer sync (Webhook + Cron) effectively eliminated the scheduling conflicts that plagued the client’s previous system.
-* **User Retention:** The LINE-to-App deep-linking strategy became the primary driver for turning passive notifications into active app sessions.
+* **Unified Experience:** Successfully bridged the gap between professional-grade trainer tools and a simplified, accessible student booking experience.
+* **Data Integrity:** The dual-layer sync (Webhook + Cron) effectively eliminated the scheduling conflicts that previously plagued the client.
+* **Scalable Launch:** The combination of a native mobile app and a lightweight LINE-integrated web app significantly boosted student conversion rates.
 
 ---
 
 ### 📥 Technical Discussion
-I am passionate about building robust, hardware-interfacing, and highly localized mobile systems. If you'd like to discuss the architecture of this project, my approach to localization, or complex API integrations, let's connect.
+I am passionate about building robust, multi-platform ecosystems. If you'd like to discuss the integration between React Native and Next.js, or how I handle secure Supabase auth across platforms, let's connect.
 
 [LinkedIn](https://linkedin.com/in/shah-khalid-react-native) • [GitHub Profile](https://github.com/ShahKhalid808)
