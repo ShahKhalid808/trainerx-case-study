@@ -8,11 +8,11 @@ TrainerX is a fitness management platform built for the Taiwan market, designed 
 
 | Component | Technology |
 | :---: | :---: |
-| **Trainer App** | <img src="https://skillicons.dev/icons?i=react,ts" width="30" align="middle" /> **React Native (Expo)** |
-| **Student Web/LINE** | <img src="https://skillicons.dev/icons?i=nextjs" width="30" align="middle" /> **Next.js** |
-| **Database** | <img src="https://skillicons.dev/icons?i=postgresql" width="30" align="middle" /> **PostgreSQL** |
-| **Backend/Auth** | <img src="https://skillicons.dev/icons?i=supabase" width="30" align="middle" /> **Supabase (Auth/API Layer)** |
-| **Analytics** | <img src="https://skillicons.dev/icons?i=googleanalytics" width="30" align="middle" /> **Google Analytics** |
+| **Trainer App** | <img src="https://skillicons.dev/icons?i=react,ts" width="20" /> **React Native (Expo)** |
+| **Student Web/LINE** | <img src="https://skillicons.dev/icons?i=nextjs" width="20" /> **Next.js** |
+| **Database** | <img src="https://skillicons.dev/icons?i=postgresql" width="20" /> **PostgreSQL** |
+| **Backend/Auth** | <img src="https://skillicons.dev/icons?i=supabase" width="20"/> **Supabase (Auth/API Layer)** |
+| **Analytics** | <img src="https://skillicons.dev/icons?i=googleanalytics" width="20" /> **Google Analytics** |
 
 ---
 
